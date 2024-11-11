@@ -21,7 +21,13 @@ After the specified number of epochs, an image containing the data and generatio
 
 
 My experiments were mainly focused on the simple VAE and comparisons to PCA.
-I find that the VAE can not handle distributions with varying noise levels.
+I find that the VAE can not handle distributions with varying noise levels. Neither can a GP. Both are nonlinear models for
+systems of the form 
+x = f(z) + e
+and struggle with
+x = f(z) + e(z)
+.
+
 Furthermore, for concentric circles and spiral distribution, the pattern can be learned only up to some degree.
 Maybe architectural changes (using a transformer etc.) could improve this.
 Most likely a better prior can do the job better. 
