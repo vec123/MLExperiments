@@ -16,9 +16,7 @@ Run
 
 python VAE.py 
 
-to train a VAE on the data. 
-After the specified number of epochs, an image containing the data and generations is saved in 'images'
-
+x 
 
 My experiments were mainly focused on the simple VAE and comparisons to PCA.
 I find that the VAE can not handle distributions with varying noise levels. Neither can a GP. Both are nonlinear models for

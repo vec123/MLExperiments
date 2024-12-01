@@ -272,7 +272,7 @@ spiral_3 = make_spiral(3)
 
 
 #---------------- concentric circles
-def generate_single_circle(n_samples, radius, noise=0.1):
+def generate_single_circle(n_samples, radius, noise=noise):
     angles = np.linspace(0, 2 * np.pi, n_samples)
     x = radius * np.cos(angles) + np.random.normal(scale=noise, size=angles.shape)
     y = radius * np.sin(angles) + np.random.normal(scale=noise, size=angles.shape)
@@ -293,8 +293,10 @@ single_radius = 3  # Radius for the single circle
 radii = [3,15]  # Radii for the concentric circles
 
 # Generate the data
-single_circle = generate_single_circle(n_samples, single_radius)
-concentric_circles = generate_concentric_circles(n_samples, radii)
+single_circle = generate_single_circle(n_samples, single_radius, noise =0.3)
+np.save('data/single_circle_pattern.npy', single_circle)
+concentric_circles = generate_concentric_circles(n_samples, radii, noise =0.1)
+np.save('data/data_concentric_circles.npy', concentric_circles)
 
 # Plot settings
 #number_of_figures = 8
